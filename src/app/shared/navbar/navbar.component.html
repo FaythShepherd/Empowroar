@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="https://www.creative-tim.com">Empowroar</a>
+            <a class="navbar-brand" href="../#/home">Empowroar</a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
@@ -10,15 +10,35 @@
         </div>
         <div class="navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item" *ngIf="!isHome()">
+                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Home</a>
+                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Home</a>
+                </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                        <i class="nc-icon nc-settings-gear-65"></i>
+                    <a class="nav-link" rel="tooltip" title="Secure Device" data-placement="bottom" href="..#/device">
+                        <i class="nc-icon nc-mobile"></i>
+                        Secure Device
+                        <p class="d-lg-none">Device</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Technology Quiz" data-placement="bottom" href="..#/user-profile">
+                        <i class="nc-icon nc-chat-33"></i>
+                        Tech Quiz
                         <p class="d-lg-none">Setting</p>
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Sign up" data-placement="bottom" href="..#/signup" target="_blank">
-                        <i class="nc-icon nc-single-02"></i>
+                    <a class="nav-link" rel="tooltip" title="Cyberbullying" data-placement="bottom" href="..#/landing">
+                        <i class="nc-icon nc-favourite-28"></i>
+                        Cyberbullying
+                        <p class="d-lg-none">Setting</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Sign up" data-placement="bottom" href="..#/signup">
+                        <i class="nc-icon nc-single-02"></i> 
+                        Sign in
                         <p class="d-lg-none">Profile</p>
                     </a>
                 </li>
@@ -28,13 +48,6 @@
                 <li class="nav-item" *ngIf="isHome()">
                     <a href="https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=pk2-angular-free-local" target="_blank" class="btn btn-danger btn-round">Upgrade to Pro</a>
                 </li> -->
-                <li class="nav-item" *ngIf="!isHome()">
-                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
-                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Home</a>
-                </li>
-                <li class="nav-item" *ngIf="isDocumentation()">
-                    <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
-                </li>
             </ul>
         </div>
     </div>
